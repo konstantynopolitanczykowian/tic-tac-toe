@@ -104,7 +104,21 @@ public class aaa {
 	    	           System.out.println("Победили нолики"); 
 	    	      if (array[i + 2][j] + array[i + 1][j + 1] + array[i][j + 2] == 15)      
 	    	           System.out.println("Победили нолики");
-	        } 
+	        }
+		   for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) { //1 2 3 4 5 6 7 8 9
+				if(array[i][j] == 0) {
+					System.out.print("_" + "\t");
+				}
+				if(array[i][j] == 1) {
+					System.out.print("X" + "\t");
+				}
+				if(array[i][j] == 5) {
+					System.out.print("0" + "\t");
+				}
+				}
+				System.out.println();
+			}
 	   }
 	        
 
