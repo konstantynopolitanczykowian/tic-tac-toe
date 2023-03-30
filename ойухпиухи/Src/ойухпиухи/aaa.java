@@ -16,63 +16,58 @@ public class aaa {
 	     if (s % 2 == 0) {
 	    	 System.out.println("Ходят крестики");
 	    	 System.out.println("Введите номер поля");
-	    	 
-	    	 int m = 10;
-			while ( m != 0) {
+	    	 int m = 0;
+	    	 int t = 0;
+			while ( t != 1) {	
 	    	  m = sc.nextInt();
-	    	 for (int c = 0; c < dlam.length; c++) {
-	    		 int t = 9;
-	    		 if(m != dlam[c]) {
-	    			t = t - 1;
+	    	  for (int c = 0; c < dlam.length; c++) { 
+	    		 if(m == dlam[c]) {
+	    			t = t + 1;
 	    		 }
-	    		 if (t == 0) {
-	    			 m = 0;
-	    			 System.out.println("Поле занято. Введите номер поля заново");
-	    		 }  
-	    	 }
+	    	  }
+	    	  if (t != 1) {
+    			 System.out.println("Поле занято. Введите номер поля заново");
+    			 m = 0;
+	    	  }
 	    	}
 	    	 for (int i = 0; i < array.length; i++) {
 			     for (int j = 0; j < array[i].length; j++) {
-			    	 if(m == prover[i][j]){
-			    		 if(array[i][j] == 0){
-			    			 array[i][j] = 1;
-			    			 for (int c = 0; c < dlam.length; c++) {
-			    				 if(prover[i][j] == dlam[c]) {
+			    	 if(m == prover[i][j] && array[i][j] == 0){
+			    		array[i][j] = 1;
+			    		for (int c = 0; c < dlam.length; c++) {
+			    			if(prover[i][j] == dlam[c]) {
 			    					 dlam[c] = 0;
-			    				 }
-			    			 }
-			    		 }
+			    			}
+			    		}
 			    	 } 
 			     }
 			   }
 	    	 }
-	    	 else { System.out.println("Ходят нолики");
-	    	 System.out.println("Введите номер поля");
-	    	 
-	    	 int m = 10;
-				while ( m != 0) {
+	  
+	     if (s % 2 == 1) { System.out.println("Ходят нолики");
+	     System.out.println("Введите номер поля");
+	    	 int m = 0;
+	    	 int t = 0;
+	    	 while ( t != 1) {	
 		    	  m = sc.nextInt();
-		    	 for (int c = 0; c < dlam.length; c++) {
-		    		 int t = 9;
-		    		 if(m != dlam[c]) {
-		    			t = t - 1;
+		    	 for (int c = 0; c < dlam.length; c++) { 
+		    		 if(m == dlam[c]) {
+		    			t = t + 1;
 		    		 }
-		    		 if (t == 0) {
-		    			 m = 0;
-		    			 System.out.println("Поле занято. Введите номер поля заново");
-		    		 }  
-		    	 }
 		    	}
+		    	 if (t != 1) {
+	    			 System.out.println("Поле занято. Введите номер поля заново");
+	    			 m = 0;
+		    	 }
+		    }
 	    	 
 	    	 for (int i = 0; i < array.length; i++) {
 			     for (int j = 0; j < array[i].length; j++) {
-			    	 if(m == prover[i][j]){
-			    		 if(array[i][j] == 0){
+			    	 if(m == prover[i][j] && array[i][j] == 0){
 			    			 array[i][j] = 5;
 			    			 for (int c = 0; c < dlam.length; c++) {
 			    				 if(prover[i][j] == dlam[c]) {
 			    					 dlam[c] = 0;
-			    				 }
 			    			 }
 			    		 }
 			    	 }
@@ -80,34 +75,34 @@ public class aaa {
 			   }
 	    	 
 	     }
-	     for (int i = 0; i < array.length; i++) {
-	            int j = 0; 
-	    	      if (array[i][j] + array[i][j + 1] + array[i][j + 2] == 3)      
+	     for (int i = 0; i < array.length; i++) {  //j = 0; 
+	    	      if (array[i][0] + array[i][1] + array[i][2] == 3)      
 	    	           System.out.println("Победили крестики");
-	    	      if (array[i][j] + array[i][j + 1] + array[i][j + 2] == 15)      
+	    	      
+	    	      if (array[i][0] + array[i][1] + array[i][2] == 15)      
 	    	           System.out.println("Победили нолики");
 	        }
-	    	    for (int j = 0; j < array.length; j++) {
-	    	    	int i = 0;
-	    	      if (array[i][j] + array[i + 1][j] + array[i + 2][j] == 3)      
+	     
+	    	    for (int j = 0; j < array.length; j++) {   //i = 0;
+	    	      if (array[0][j] + array[1][j] + array[2][j] == 3)      
 	    	           System.out.println("Победили крестики");
-	    	      if (array[i][j] + array[i + 1][j] + array[i + 2][j] == 15)
+	    	      if (array[0][j] + array[1][j] + array[2][j] == 15)
 	    	    	  System.out.println("Победили нолики");
 	    	        }
-	        for (int i = 0; i < array.length; ) {
-	    	    int j = 0;  
-	    	      if (array[i][j] + array[i + 1][j + 1] + array[i + 2][j + 2] == 3)      
+	 
+	    	      if (array[0][0] + array[1][1] + array[2][2] == 3)           //i = 0; //j = 0;    
 	    	           System.out.println("Победили крестики"); 
-	    	      if (array[i + 2][j] + array[i + 1][j + 1] + array[i][j + 2] == 3)      
+	    	      if (array[2][0] + array[1][1] + array[0][2] == 3)      
 	    	           System.out.println("Победили крестики");
-	    	      if (array[i][j] + array[i + 1][j + 1] + array[i + 2][j + 2] == 15)      
+	    	      if (array[0][0] + array[1][1] + array[2][2] == 15)      
 	    	           System.out.println("Победили нолики"); 
-	    	      if (array[i + 2][j] + array[i + 1][j + 1] + array[i][j + 2] == 15)      
+	    	      if (array[2][0] + array[1][1] + array[0][2] == 15)      
 	    	           System.out.println("Победили нолики");
-	        }
-		   for (int i = 0; i < array.length; i++) {
+	        
+	    	      
+		   for (int i = 0; i < array.length; i++) {  //System.out.println('Проверка');
 			for (int j = 0; j < array[i].length; j++) { //1 2 3 4 5 6 7 8 9
-				if(array[i][j] == 0) {
+			   	if(array[i][j] == 0) {
 					System.out.print("_" + "\t");
 				}
 				if(array[i][j] == 1) {
